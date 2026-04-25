@@ -1,8 +1,8 @@
 import google.generativeai as genai
-
+import streamlit as st
 # Apni API Key yahan dalein
-genai.configure(api_key="AIzaSyCryyR7CuSZ37yfdvVJD9vtSqkjJ9qPObk")
-
+api_key = st.secrets["GOOGLE_API_KEY"] 
+genai.configure(api_key=api_key)
 def analyze_resume(resume_text):
     """
     Resume text ko analyze karke skills, experience, aur suggestions return karta hai.
